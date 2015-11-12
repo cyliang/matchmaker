@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Chih-Yung Liang">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title></title>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/game.css">
+</head>
+
+<body>
+	<div id="first-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6 col-sm-offset-3 col-xs-10 col-xs-offset-1">
+					<img class="img-responsive logo" src="img/logo.png">
+				</div>
+			</div>
+			<p class="lead subtitle text-center">
+				交大外文105級外文公演
+			</p>
+			<p class="text-center" id="big-text">
+				Are you the matchmaker?
+			</p>
+			<form method="POST" action="#" id="name-form">
+				<div class="row" id="name-prompt">
+					<div class="col-md-2 col-md-offset-3 col-xs-4 col-xs-offset-1 text-right">
+						挑戰者：
+					</div>
+					<div class="col-md-4 col-xs-5">
+						<input type="text" id="player-name" required autofocus>
+					</div>
+				</div>
+				<p class="text-center">
+					<button type="submit" class="btn" id="start-btn">Start</button>
+				</p>
+			</form>
+		</div>
+	</div>
+
+	<div id="second-page">
+		<div class="row">
+			<div class="col-md-2 col-sm-4 col-sm-offset-1 hidden-xs">
+				<img class="img-responsive logo" src="img/logo.png">
+			</div>
+		</div>
+
+		<div class="container">
+			<p class="text-center"><span id="counter">0</span> seconds</p>
+
+			<div id="card-panel">
+			</div>
+		</div>
+	</div>
+
+	<div id="third-page">
+	</div>
+
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+	<script src="js/jquery.tinytimer.min.js"></script>
+	<script src="js/card-game.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			$('#second-page, #third-page').hide()
+			cardGame.prepare()
+
+			$('#name-form').submit(function() {
+				event.preventDefault()
+
+				$('#first-page').slideUp(function() {
+					$('#second-page').slideDown(function() {
+						cardGame.start()
+					})
+				})
+			})
+		})
+	</script>
+</body>
+</html>
