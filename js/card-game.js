@@ -15,7 +15,7 @@ var cardGame = {
 						 var id = i * 4 + j;
 
 						 this._cards.push(
-							 $('<div>').addClass('col-xs-1 col-xs-push-4').html(
+							 $('<div>').addClass('col-md-1 col-md-push-4 col-xs-2 col-xs-push-2').html(
 								 '<div class="card">' +
 									 '<div class="card-front"></div>' +
 									 '<div class="card-back card' + this._seq[id] + '"></div>' +
