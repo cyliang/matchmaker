@@ -33,6 +33,8 @@ var cardGame = {
 				   from: Date.now(),
 			   	   format: "%S"
 			   });
+
+			   this._playerName = $('#player-name').val();
 		   },
 
 	click: function(id) {
@@ -84,6 +86,8 @@ var cardGame = {
 				  this._completeTime = $('#counter').text();
 				  console.log(this._completeTime);
 				  $('#second-page').slideUp(function() {
+					  $('#show-name').text(_this._playerName);
+					  $('#result-second').text(_this._completeTime);
 					  $('#third-page').slideDown(/*TODO*/);
 				  });
 			  },
