@@ -88,7 +88,7 @@ var cardGame = {
 				  $('#second-page').slideUp(function() {
 					  $('#show-name').text(_this._playerName);
 					  $('#result-second').text(_this._completeTime);
-					  $('#third-page').slideDown(/*TODO*/);
+					  $('#third-page').fadeIn();
 				  });
 			  },
 
