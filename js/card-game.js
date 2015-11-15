@@ -6,7 +6,7 @@ var cardGame = {
 				 this._panel = $('#card-panel');
 				 this._cards = [];
 				 this._remain = 16;
-				 _this = this;
+				 var _this = this;
 
 				 for (i = 0; i < 4; i++) {
 					 var row = $('<div>').addClass('row gamerow').appendTo(this._panel);
@@ -84,10 +84,18 @@ var cardGame = {
 	complete: function() {
 				  $('#counter').data('tinyTimer').stop();
 				  this._completeTime = $('#counter').text();
-				  console.log(this._completeTime);
+
+				  var _this = this;
 				  $('#second-page').slideUp(function() {
 					  $('#show-name').text(_this._playerName);
 					  $('#result-second').text(_this._completeTime);
+
+					  for (var level in _this._rating) {
+						  if (_this._completeTime <= _this._rating[level].time) {
+					  		  $('#are-matchmaker').text(_this._rating[level].comment);
+							  break;
+						  }
+					  }
 					  $('#third-page').fadeIn();
 				  });
 			  },
@@ -104,7 +112,23 @@ var cardGame = {
 
 	_flippedCard: null,
 	_animating: false,
-	_remain: 0
+	_remain: 0,
+
+	_rating: [
+		{
+			comment: '記憶達人! matchmaker就是你!',
+			time: 30
+		}, {
+			comment: '還行還行! 但是有人比你更行~~',
+			time: 35
+		}, {
+			comment: '差強人意! 多吃銀杏!',
+			time: 45
+		}, {
+			comment: '哈哈哈! 你一定想不到前天晚上吃了什麼吧XDDD',
+			time: Infinity
+		}
+	]
 }
 
 var shuffle = function(arr) {
