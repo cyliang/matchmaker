@@ -1,6 +1,7 @@
 .card-front {
 	transform: rotateY(0deg);
-	background-color: white;
+	background: url("../img/card.jpg");
+	background-size:contain;
 }
 
 .card-back {
@@ -19,7 +20,8 @@
 	position: absolute;
 	left: 0;
 	top: 0;
-	/* transition: 1.5s ease-in-out; */
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px gray;
 	backface-visibility: hidden;
 	-webkit-backface-visibility: hidden;
 	-webkit-perspective: 70px;
