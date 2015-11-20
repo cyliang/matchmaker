@@ -120,10 +120,10 @@ var cardGame = {
 			time: 30
 		}, {
 			comment: '還行還行! 但是有人比你更行~~',
-			time: 35
+			time: 40
 		}, {
 			comment: '差強人意! 多吃銀杏!',
-			time: 45
+			time: 50
 		}, {
 			comment: '哈哈哈! 你一定想不到前天晚上吃了什麼吧XDDD',
 			time: Infinity
