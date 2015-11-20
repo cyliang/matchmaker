@@ -120,19 +120,19 @@ var cardGame = {
 	_rating: [
 		{
 			comment: '記憶達人! matchmaker就是你!',
-			font: "56px",
+			font: "28px",
 			time: 30
 		}, {
 			comment: '還行還行! 但是有人比你更行~~',
-			font: "56px",
+			font: "28px",
 			time: 40
 		}, {
 			comment: '差強人意! 多吃銀杏!',
-			font: "56px",
+			font: "28px",
 			time: 50
 		}, {
 			comment: '哈哈哈! 你一定想不到前天晚上吃了什麼吧XDDD',
-			font: "40px",
+			font: "20px",
 			time: Infinity
 		}
 	],
@@ -143,25 +143,25 @@ var cardGame = {
 					 this.backgroundImg = new Image();
 					 this.backgroundImg.src = "img/grade.jpg";
 					 this.backgroundImg.onload = function() {
-						 _this.canvas = $('<canvas width="900" height="900">')[0];
+						 _this.canvas = $('<canvas width="450" height="450">')[0];
 						 _this.context = _this.canvas.getContext('2d');
-						 _this.context.drawImage(_this.backgroundImg, 0, 0);
+						 _this.context.drawImage(_this.backgroundImg, 0, 0, 450, 450);
 					 }
 				 },
 
 		generate: function(name, time, rating) {
-					  this.context.font = "56px Arial";
+					  this.context.font = "28px Arial";
 					  this.context.textAlign = "center";
-					  this.context.fillText(name, 410, 412);
+					  this.context.fillText(name, 205, 206);
 					  
-					  this.context.font = "180px Arial";
-					  this.context.fillText(time, 350, 630);
+					  this.context.font = "90px Arial";
+					  this.context.fillText(time, 175, 315);
 
 					  this.context.font = rating.font + " Arial";
 					  this.context.fillStyle = "red";
-					  this.context.fillText(rating.comment, 460, 750);
+					  this.context.fillText(rating.comment, 230, 375);
 
-					  this.dataURL = this.canvas.toDataURL("image/jpg");
+					  this.dataURL = this.canvas.toDataURL("image/png");
 					  $('#grade-download').attr("href", this.dataURL);
 				  }
 	}
